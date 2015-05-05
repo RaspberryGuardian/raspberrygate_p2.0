@@ -7,6 +7,10 @@ if [ ! -d /opt/rbg ] ; then
     apt-get install $INSTALL_LIST
 fi
 
+if [ ! -e /dev/hwrng ] ; then
+    lib/add-module.sh 
+fi
+
 lib/create-dirs.sh
 
 install src/* /opt/rbg/bin

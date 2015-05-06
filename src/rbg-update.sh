@@ -10,10 +10,10 @@ fi
 cd $SRCDIR
 
 if [ ! -d raspberrygate_p2.0 ] ; then
-    /usr/bin/git clone https://github.com/RaspberryGuardian/raspberrygate_p2.0.git
+    /usr/bin/git clone -q https://github.com/RaspberryGuardian/raspberrygate_p2.0.git
 else
     cd raspberrygate_p2.0
-    /usr/bin/git pull
+    /usr/bin/git pull -q
     LANG=C date > /opt/rbg/src/install.log
     if [ -f install.sh ] ; then
 	/bin/sh install.sh 2>&1 >> /opt/rbg/src/install.log

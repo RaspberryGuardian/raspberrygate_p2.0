@@ -24,7 +24,8 @@ fi
 grep -q MAINTENANCE $BOOTF ; VALUE=$?
 if [ $VALUE -eq 0 ] ; then
     # find 'MAINTENANCE' and run rbg-update.sh
-    $BINDIR/rbg-update.sh
+    cd /opt/rbg/src 
+    nohup $BINDIR/rbg-update.sh &
     exit 0
 fi
 

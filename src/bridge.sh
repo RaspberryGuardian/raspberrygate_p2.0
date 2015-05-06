@@ -1,5 +1,9 @@
 #!/bin/sh
 
+if [ -f /opt/rbg/lib/bridge-functions ; then
+ . /opt/rbg/lib/bridge-functions
+fi
+
 if [ -f /opt/rbg/bin/stop-deamon.sh ] ; then
     /opt/rbg/bin/stop-deamon.sh
 fi

@@ -1,5 +1,9 @@
 #!/bin/sh
 
+if [ -f /opt/rbg/lib/router-functions ; then
+ . /opt/rbg/lib/router-functions
+fi
+
 
 #
 # Stop ssh, ntp ( and others )

@@ -20,7 +20,6 @@ install etc/* /opt/rbg/etc
 install src/raspg.sh /etc/init.d/raspg
 insserv raspg
 
-
-
+lib/create-initvect.sh
 
 

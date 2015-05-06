@@ -23,3 +23,5 @@ insserv raspg
 lib/create-initvect.sh
 
 
+
+exit 0

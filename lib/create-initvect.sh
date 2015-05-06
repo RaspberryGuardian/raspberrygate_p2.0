@@ -16,4 +16,9 @@ dd if=/dev/hwrng of=/opt/rbg/etc/initvec bs=1K count=8
 
 echo 'Raspberry Gate: /opt/rbg/etc/initvec was created.'
 
+IDKEY=`(ifconfig eth0 | grep HWaddr | awk '{printf "%s", $5;}' ; echo 'idkey-1') | sha256sum  | cut -c-16`
+SECKEY=`(ifconfig eth0 | grep HWaddr | awk '{printf "%s", $5;}' ; cat /opt/rbp/etc/initvect) | sha256sum  | cut -c-16`
+
+(echo '### Raspberry Gate KEY KEYINIT ' ; echo 'IDKEY ' $IDKEY ; echo 'SECKEY ' $SECKEY) >> /opt/rbg/etc/rbg.conf
+
 exit 0

@@ -1,0 +1,7 @@
+cp shutdownswitchdeamon.sh /usr/sbin
+chmod +x /usr/sbin/shutdownswitchdeamon.sh
+
+cp shutdownsw.sh /etc/init.d
+chmod +x /etc/init.d/shutdownsw.sh
+/usr/sbin/update-rc.d shutdownsw.sh defaults
+
